@@ -16,26 +16,40 @@
         }
         .friends-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
             width: 90%;
-            max-width: 800px;
+            max-width: 1000px;
         }
         .friend {
             text-align: center;
             background: white;
-            padding: 10px;
+            padding: 15px;
             border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.1);
         }
         .friend img {
-            width: 100%;
-            height: auto;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
             border-radius: 10px;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .friends-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            }
+            .friend img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        @media (max-width: 500px) {
             .friends-grid {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .friend img {
+                width: 140px;
+                height: 140px;
             }
         }
     </style>
@@ -46,7 +60,7 @@
 
     <script>
         let friends = [
-                {src: "Sanvi.jpg", name: "Sanvi"},
+          	{src: "Sanvi.jpg", name: "Sanvi"},
                 {src: "prashanthi.jpg", name: "Prashanthi"},
                 {src: "Rakesh.jpg", name: "Rakesh"},
                 {src: "Gnanu.jpg", name: "Gnanu"},
