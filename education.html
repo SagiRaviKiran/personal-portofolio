@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | Sagi Ravi Kiran</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .education-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .education-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .education-item:hover {
+            background-color: #f9f9f9;
+            transform: translateY(-5px);
+        }
+        .education-item h3 {
+            margin: 0;
+            color: #4facfe;
+        }
+        .education-item p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+        }
+        .details img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function toggleDetails(id) {
+            const detailSection = document.getElementById(id);
+            if (detailSection.style.display === "none" || detailSection.style.display === "") {
+                detailSection.style.display = "block";
+            } else {
+                detailSection.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        Education | Sagi Ravi Kiran
+    </header>
+    <div class="education-container">
+        <div class="education-item" onclick="toggleDetails('school-details')">
+            <h3>Siv Sai High School</h3>
+            <p>Completed SSC in 2017 with a GPA of 8.8</p>
+            <div class="details" id="school-details">
+                <img src="school.jpg" alt="Siv Sai High School">
+                <p><strong>My Experience:</strong> I completed my 10th class in 2017, spending 13 years at Siv Sai High School, Garividi. This school gave me countless memories and lifelong friends like Rakesh, Gnanu, Srikanth, and more. I fondly recall my supportive teachers Rambabu Sir, who played a pivotal role in shaping my mathematics and logical thinking skills and Ganesh sir also. Memorable moments include discussing Mahabharat with Srikanth and enjoying secret adventures with Rakesh and Gnanu. Special mention to my friend Prashanthi, who became a close friend years after leaving the school. The bonds and experiences from this time remain cherished.</p>
+            </div>
+        </div>
+        <div class="education-item" onclick="toggleDetails('polytechnic-details')">
+            <h3>Government Polytechnic, Visakhapatnam</h3>
+            <p>Diploma in Mechanical Engineering (2017-2020)</p>
+            <div class="details" id="polytechnic-details">
+                <img src="polytechnic.jpg" alt="Government Polytechnic, Visakhapatnam">
+                <p><strong>My Experience:</strong> I secured a rank of 1896 in the POLYCET exam and pursued a Diploma in Mechanical Engineering at Government Polytechnic, Visakhapatnam. As the Class Representative for three years, I developed leadership skills and managed multiple responsibilities. Highlights include organizing events like blood donation drives, leading hostel discussions, and participating in trekking expeditions. My industrial training at RINL Steel Plant provided valuable real-world experience. My hostel life with friends like Suresh, Manikanta, and Gowtham was filled with fun, cricket matches, and cooking sessions. These memories, along with bonds with classmates like Mounika and Srinivas, made this phase unforgettable.</p>
+            </div>
+        </div>
+        <div class="education-item" onclick="toggleDetails('college-details')">
+            <h3>Raghu Institute of Technology</h3>
+            <p>B.Tech in Computer Science and Data Science (2022-Present)</p>
+            <div class="details" id="college-details">
+                <img src="rit.png" alt="Raghu Institute of Technology">
+                <p><strong>My Experience:</strong> Transitioning from a Mechanical Engineering background to Computer Science was challenging but rewarding. In my second year, I struggled to adapt but eventually improved. I formed close friendships with Lokesh, Kusuma, Dushyanth and Jayaram. My college supported us through advanced DSA training and industry-focused projects like "Big Mart Sales Prediction Using LightGBM." I also enjoyed exploring Visakhapatnam with friends and bonding over shared experiences. Despite challenges, this journey has been transformative, filled with growth and cherished moments.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 Sagi Ravi Kiran
+    </footer>
+</body>
+</html>
