@@ -35,28 +35,27 @@
         .section h3 {
             color: #ff7e5f;
         }
-        .family-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .family-row {
+            display: flex;
+            justify-content: center;
             gap: 20px;
-            margin-top: 20px;
+            margin-bottom: 20px;
         }
-        .family-grid .member {
+        .family-row .individual {
             text-align: center;
         }
-        .family-grid img {
-            width: 100%;
-            max-width: 150px;
+        .individual img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
             border-radius: 50%;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .family-grid h4 {
-            margin: 10px 0 5px;
-            color: #333;
-        }
-        .family-grid p {
-            color: #666;
-            font-size: 14px;
+        .family-photo img {
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
         .photos-grid {
             display: grid;
@@ -66,6 +65,8 @@
         }
         .photos-grid img {
             width: 100%;
+            height: 150px;
+            object-fit: cover;
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
@@ -73,12 +74,26 @@
         .photos-grid img:hover {
             transform: scale(1.05);
         }
-        footer {
-            background: linear-gradient(45deg, #feb47b, #ff7e5f);
-            color: white;
-            padding: 10px;
+        .group-photo img {
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             margin-top: 20px;
-            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .family-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .photos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 500px) {
+            .photos-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
     </style>
 </head>
@@ -90,25 +105,31 @@
         <div class="section">
             <h3>About My Family</h3>
             <p>My family is my greatest source of strength and support. We share love, laughter, and countless memorable moments together.</p>
-            <div class="family-grid">
-                <div class="member">
-                    <img src="father.jpg" alt="Father">
-                    <h4>My Father</h4>
-                </div>
-                <div class="member">
-                    <img src="mother.jpg" alt="Mother">
-                    <h4>My Mother</h4>
-                </div>
-                <div class="member">
-                    <img src="brother.jpg" alt="Brother">
-                    <h4>My Brother</h4>
-                   
-                </div>
+        </div>
+        
+        <div class="family-row">
+            <div class="individual">
+                <img src="Nanna.jpg" alt="Father">
+                <h4>My Father</h4>
+            </div>
+            <div class="individual">
+                <img src="Amma.jpg" alt="Mother">
+                <h4>My Mother</h4>
+            </div>
+            <div class="individual">
+                <img src="Annaya.jpg" alt="Brother">
+                <h4>My Brother</h4>
             </div>
         </div>
+        
+        <div class="family-photo">
+            <h3>Family Photo</h3>
+            <img src="Family.jpg" alt="Family Photo">
+        </div>
+        
         <div class="section">
-            <h3> Cousins</h3>
-            <div class="photos-grid">
+            <h3>My Cousins</h3>
+            <div class="photos-grid" id="cousinsGrid">
                 <img src="cousin1.jpg" alt="Cousin 1">
                 <img src="cousin2.jpg" alt="Cousin 2">
                 <img src="cousin3.jpg" alt="Cousin 3">
@@ -120,7 +141,23 @@
                 <img src="cousin9.jpg" alt="Cousin 9">
             </div>
         </div>
+        
+        <div class="group-photo">
+            <h3>Group Photo</h3>
+            <img src="group.jpg" alt="Group Photo">
+        </div>
     </div>
+    
+    <script>
+        function shuffleImages() {
+            let grid = document.getElementById("cousinsGrid");
+            let images = Array.from(grid.children);
+            images.sort(() => Math.random() - 0.5);
+            images.forEach(img => grid.appendChild(img));
+        }
+        shuffleImages();
+    </script>
+    
     <footer>
         &copy; 2025 Sagi Ravi Kiran
     </footer>
